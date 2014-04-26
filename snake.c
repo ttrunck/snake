@@ -15,6 +15,18 @@ void init_snake(snake **s)
 	SDL_FillRect((*s)->surface, NULL, SDL_MapRGB((*s)->surface->format, 17, 206, 112));
 }
 
+void delete_snake(snake *s)
+{
+	free(s->surface);
+	lsnake *elt = s->head;
+	while(elt != NULL){
+		lsnake *tmp = elt;
+		elt = elt->next;
+		free(tmp->prev);
+	}
+	free(s);
+}
+
 void print_snake(SDL_Surface *screen, snake *s)
 {
 	SDL_Rect pos;

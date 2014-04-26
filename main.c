@@ -98,6 +98,8 @@ int main(int argc, char *argv[])
         prevTime = currTime;
     }
 
+    delete_snake(s);
+    free(bonusSurf);
     SDL_Quit();
 
     return EXIT_SUCCESS;

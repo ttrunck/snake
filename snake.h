@@ -27,6 +27,7 @@ struct snake{
 
 void init_snake(snake**);
 void print_snake(SDL_Surface*, snake*);
+void delete_snake(snake*);
 
 int move_snake(snake*, int, int, enum caseType[SCREEN_W/SNAKE_SIZE][SCREEN_H/SNAKE_SIZE], bonus*);
 #endif
